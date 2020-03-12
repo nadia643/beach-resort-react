@@ -21,6 +21,7 @@ class RoomProvider extends Component {
             rooms, 
             featuredRooms, 
             sortedRooms: rooms, 
+            //as soon as the component did mount, loading is not true and the icon disappears
             loading: false
 
         })
