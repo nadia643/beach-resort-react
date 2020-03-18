@@ -8,13 +8,16 @@ export default function RoomContainer() {
     return (
         <RoomConsumer>
                 {value => {
-                    console.log(value);
+                    const {loading, sortedRooms, rooms} = value
+                    if (loading) {
+                        return <Loading />;
+                    }
                     
                     return (
                         <div>
                             Hello from room container
-                            <RoomsFilter />
-                            <RoomList />
+                            <RoomsFilter rooms={rooms}/>
+                            <RoomList rooms={sortedRooms}/>
                         </div>
                     );
                 }}
