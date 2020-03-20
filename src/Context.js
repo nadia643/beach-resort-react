@@ -26,12 +26,18 @@ class RoomProvider extends Component {
         //this.getData
         let rooms = this.formatData(items);
         let featuredRooms = rooms.filter(room => room.featured === true);
+        let maxPrice = Math.max(...rooms.map(item => item.price));
+        let maxSize = Math.max(...rooms.map(item => item.size));
+
         this.setState({
             rooms, 
             featuredRooms, 
             sortedRooms: rooms, 
             //as soon as the component did mount, loading is not true and the icon disappears
-            loading: false
+            loading: false,
+            price: maxPrice,
+            maxPrice,
+            maxSize
 
         })
     }
@@ -50,6 +56,13 @@ class RoomProvider extends Component {
         let tempRooms = [...this.state.rooms];
         const room = tempRooms.find((room) => room.slug === slug)
         return room;
+    };
+    handleChange = event => {
+        const type = event.target.type
+        const name = event.target.name
+        const value = event.target.value
+        console.log(type, name, value);
+
     }
 
     render() {
