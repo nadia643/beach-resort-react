@@ -81,7 +81,7 @@ class RoomProvider extends Component {
 
     let tempRooms = [...rooms];
     if(type !== 'all') {
-        tempItems = tempRooms.filter(room => room.type === type)
+        tempRooms = tempRooms.filter(room => room.type === type)
     }
     this.setState({
         sortedRooms: tempRooms
