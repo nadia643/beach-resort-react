@@ -9,7 +9,7 @@ import Button from '../components/StyledHero';
 
 export default function Home() {
     return (
-        <>
+    <>
     <Hero>
         <Banner title="Luxurious Rooms" subtitle="Deluxe Rooms starting at $299">
         <Link to='/rooms' className="btn-primary">
@@ -19,7 +19,6 @@ export default function Home() {
     </Hero>
     <Services />
     <FeaturedRooms />
-    <Button>hello</Button>
     </>
 )
 }
